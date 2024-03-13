@@ -1,26 +1,25 @@
-let greetingWelcome = prompt("Enter Your Name");
-document.getElementById("greetingWelcome").innerText =
-  "Welcome " + greetingWelcome;
+let gradeCheck = document.querySelector("#grade-check");
+let totalMarks = document.querySelector("#Total-Marks");
+let totalObtainMarks = document.querySelector("#total-obtain-marks");
+let showGrade = document.querySelector("#result");
 
-document.getElementById("checkPer").addEventListener("click", function (event) {
+gradeCheck.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  let inp = parseInt(document.getElementById("inp-per").value);
-  let answer = document.getElementById("grade");
-
-  if (inp > 100 || isNaN(inp)) {
-    answer.innerHTML = "Please Enter Number 0 to 100";
-  } else if (inp >= 80 && inp <= 100) {
-    answer.innerHTML = "Your Grade Is A+";
-  } else if (inp >= 70 && inp <= 79) {
-    answer.innerHTML = "Your Grade Is A";
-  } else if (inp >= 60 && inp <= 69) {
-    answer.innerHTML = "Your Grade Is B";
-  } else if (inp >= 50 && inp <= 59) {
-    answer.innerHTML = "Your Grade Is C";
-  } else if (inp >= 40 && inp <= 49) {
-    answer.innerHTML = "Your Grade Is D";
+  let user_totalmarks = totalMarks.value;
+  let user_obtainmarks = totalObtainMarks.value;
+  let percentage = (user_obtainmarks / user_totalmarks) * 100;
+  if (percentage >= 80) {
+    showGrade.innerText = "Congratulations!\nYour Grade is A+ 😍";
+  } else if (percentage >= 70) {
+    showGrade.innerText = "Congratulations!\nYour Grade is A 😍";
+  } else if (percentage >= 60) {
+    showGrade.innerText = "Congratulations!\nYour Grade is B 😊";
+  } else if (percentage >= 50) {
+    showGrade.innerText = "keep Working Hard!\nYour Grade is C 😐";
+  } else if (percentage >= 40) {
+    showGrade.innerText = "You Must Work Hard!\nYour Grade is D ☹️";
   } else {
-    answer.innerHTML = "You Are Fail";
+    showGrade.innerText = "Better Luck Next Time!\nYou are Fail ☹️";
   }
 });

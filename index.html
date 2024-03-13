@@ -4,37 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="percentage">
-      <nav>
-        <i class="fa-solid fa-graduation-cap"></i><span>GRADE</span>
-        <br />
-        <br />
+    <form id="grade-check">
+      <div class="percentage">
         <h1>CHECK YOUR GRADE</h1>
-      </nav>
-      <div class="ppp">
-        <div class="aligment"></div>
-        <center>
-          <div class="card">
-            <br />
-            <h1 id="grade"></h1>
-            <br /><br />
-            <button id="greetingWelcome"></button><br /><br /><br />
-            <form action="">
-              <input
-                type="number"
-                name=""
-                id="inp-per"
-                placeholder="ENTER YOUR PERCENTAGE"
-              />
-            </form>
-            <br /><br />
-            <button id="checkPer">CHECK</button>
-          </div>
-        </center>
+
+        <input
+          type="number"
+          id="Total-Marks"
+          placeholder="ENTER YOUR Total  Marks"
+        />
+        <input
+          type="number"
+          id="total-obtain-marks"
+          placeholder="ENTER YOUR Total Obtain Marks"
+        />
+
+        <h3 id="result"></h3>
+        <button id="Btn1">CHECK</button>
       </div>
-    </div>
+    </form>
     <script type="module" src="./app.js"></script>
   </body>
 </html>
